@@ -2,7 +2,7 @@
 <html ng-app="eventsApp">
 <head lang="en">
     <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">     <link type="text/css" rel="stylesheet" href="css/tasks.css">
+<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">     <link type="text/css" rel="stylesheet" href="css/tasks.css">
 
     <script src="js/jquery-1.9.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -14,7 +14,7 @@
 
     <script src="angular/filters/filter.js"></script>
 </head>
-<body>
+<body style="overflow:hidden;width:100%;">
 <div data-ng-controller="MainCtrl">
 <div class="navbar navbar-inverse " role="navigation" >
     <div class="container">
@@ -69,7 +69,6 @@
                 <input type="text" ng-model="name" class="form-control">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="submit" ng-click="add(name)">Add</button>
-
                     <button class="btn btn-default" type="submit" ng-click="all()">All</button>
                     <button class="btn btn-default" type="submit" ng-click="none()">None</button>
                 </span>
@@ -82,10 +81,9 @@
                 <h2>Items</h2>
                 <div class="panel panel-default">
                     <div class="list-group" ng-repeat="item in list.items">
-
-                        <a href="#" class="list-group-item " ng-class="{'list-group-item-success' : item.done}">
+                        <a ng-click="checked(item.done)" href="#" class="list-group-item " ng-class="{'list-group-item-success' : item.done}">
                             <div class="btn-group pull-left">
-                                <input type="checkbox" ng-model="item.done"  ng-click="checked(item.done)" class="btn btn-default" />
+                                <input type="checkbox" ng-model="item.done"   class="btn btn-default" />
                             </div>
 
                             <h4>{{item.name}}</h4>
