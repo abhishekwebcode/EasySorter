@@ -81,7 +81,7 @@
                 <h2>Items</h2>
                 <div class="panel panel-default">
                     <div class="list-group" ng-repeat="item in list.items">
-                        <a ng-click="checked(item.done)" href="#" class="list-group-item " ng-class="{'list-group-item-success' : item.done}">
+                        <a ng-click="checked(item.done,$event,$index)" href="#" class="list-group-item " ng-class="{'list-group-item-success' : item.done}">
                             <div class="btn-group pull-left">
                                 <input type="checkbox" ng-model="item.done"   class="btn btn-default" />
                             </div>

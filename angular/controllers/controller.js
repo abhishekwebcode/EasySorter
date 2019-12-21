@@ -53,7 +53,11 @@ download('text.txt',i)
         countchecked()
     })
 
-    $scope.checked = function(done){
+    $scope.checked = function(done,element,index){
+        console.dir(arguments)
+        //element.target.parentElement.querySelector(`input`).checked=(!done);
+        $scope.list.items[index].done=!done;
+        return false;
         if(done){
             $scope.complitedCount =-1;
             return true;
